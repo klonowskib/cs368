@@ -33,10 +33,13 @@ Student::Student(std::string name,
     this->yearOfBirth = yearOfBirth;
     this->assignmentsScore = assignmentsScore;
     this->projectScore = -1.0;
+    numStudents = numStudents + 1;
 }
-int Student::getNumStudents () 
+int Student::numStudents = 0;
+
+int Student::getNumStudents() 
 {
-	return -1;
+	return numStudents;
 }
 int Student::getId() 
 {
