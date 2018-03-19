@@ -15,6 +15,7 @@
 // URL(s) of sources:           
 ///////////////////////////////////////////////////////////////////////
 #include "Student.hpp"
+#include <iostream>
 /**
 * @brief A parameterised constructor for a Student.
 *
@@ -36,8 +37,7 @@ Student::Student(std::string name,
     numStudents = numStudents + 1;
 }
 int Student::numStudents = 0;
-
-int Student::getNumStudents() 
+int Student::getNumStudents()
 {
 	return numStudents;
 }
@@ -65,7 +65,24 @@ double Student::getProjectScore()
 {
 	return projectScore;
 }
-void Student::printDetails() {
+void Student::printDetails() 
+{
+	std::cout<<"STUDENT DETAILS:" << std::endl;
+	std::cout<< "Id = " 	+ getId() << std::endl;
+	std::cout<< "Name = "	+ getName() << std::endl;
+	std::cout<< "Age = " 	+ getAge() << std::endl;
+	std::cout<< "Assignments = [";
+	int i = 0;
+        const std::vector<double>& assignments = getAssignmentsScore();
+	for(double score : getAssignmentsScore()) {
+			if (i<assignments.size() -1)
+				printf("%f, ", score);
+			else
+				printf("%f]\n", score);
+	}
+	printf("Project = %f\n", getProjectScore());	
+	printf("Total = %f\n", getTotal());	
+	std::cout<< "Grade = " 	+ getGrade() << std::endl;
 }
 
 /**
