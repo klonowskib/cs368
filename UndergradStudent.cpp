@@ -15,6 +15,7 @@
 ///////////////////////////////////////////////////////////////////////
 #include "Student.hpp"
 #include "UndergradStudent.hpp"
+#include <iostream>
 UndergradStudent::UndergradStudent(std::string name,
                      int yearOfBirth,
                      const std::vector<double>& assignmentsScore,
@@ -32,7 +33,7 @@ UndergradStudent::UndergradStudent(std::string name,
 * @return The residence hall in which the student resides.
 */
 std::string UndergradStudent::getResidenceHall() {
-	return "Residence hall name";
+	return residenceHall;
 }
 
 /**
@@ -41,7 +42,7 @@ std::string UndergradStudent::getResidenceHall() {
 * @return The year in college of the student.
 */
 std::string UndergradStudent::getYearInCollege() {
-	return "year";
+	return yearInCollege;
 }
 /**
 * @brief Get the total number of undergraduate students.
@@ -49,10 +50,12 @@ std::string UndergradStudent::getYearInCollege() {
 * @return The number of undergraduate students.
 */
 int UndergradStudent::getNumStudents() {
-	return -1.0;
+	return Student::getNumStudents();
 }
 void UndergradStudent::printDetails() {
-	
+	Student::printDetails();
+	std::cout<< "Residence Hall = " + getResidenceHall() << std::endl;
+	std::cout << "Year in College = " +  getYearInCollege()<< std::endl;
 }
 
 double UndergradStudent::getTotal() {
