@@ -84,22 +84,3 @@ void Student::printDetails()
 	printf("Total = %f\n", getTotal());	
 	std::cout<< "Grade = " 	+ getGrade() << std::endl;
 }
-
-/**
-* @brief Get the total score of a student.
-*
-* @return The total score of the student.
-*/
-double Student::getTotal() {
-	return -1.0;
-}
-
-/**
-* @brief Get the letter grade obtained by a student.
-*
-* @return The letter grade of the student. The possible letter grades are "CR" and "N".
-*/
-std::string Student::getGrade() {
-	return "Student grade";
-}
-

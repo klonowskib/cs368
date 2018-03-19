@@ -13,7 +13,18 @@
 //
 // URL(s) of sources:           
 ///////////////////////////////////////////////////////////////////////
+#include "Student.hpp"
 #include "UndergradStudent.hpp"
+UndergradStudent::UndergradStudent(std::string name,
+                     int yearOfBirth,
+                     const std::vector<double>& assignmentsScore,
+                     double projectScore,
+                     std::string residenceHall,
+                     std::string yearInCollege): Student (name, yearOfBirth, assignmentsScore, projectScore)
+{	
+	this->residenceHall = residenceHall;
+	this->yearInCollege = yearInCollege;
+}
 
 /**
 * @brief Getter for a student's residence hall.
