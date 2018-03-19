@@ -14,7 +14,26 @@
 //
 // URL(s) of sources:           
 ///////////////////////////////////////////////////////////////////////
-#include "Student.hpp" 
+#include "Student.hpp"
+/**
+* @brief A parameterised constructor for a Student.
+*
+* @param name Student's name.
+* @param yearOfBirth Student's year of birth.
+* @param assignmentsScore Student's assignment scores.
+* @param projectScore Student's project score.
+*/
+Student::Student(std::string name,
+            int yearOfBirth,
+            const std::vector<double> &assignmentsScore,
+            double projectScore) 
+{
+
+    this->name = name;
+    this->yearOfBirth = yearOfBirth;
+    this->assignmentsScore = assignmentsScore;
+    this->projectScore = -1.0;
+}
 int Student::getNumStudents () 
 {
 	return -1;
@@ -29,19 +48,19 @@ std::string Student::getName()
 }
 int Student::getYearOfBirth() 
 {
-	return -1;
+	return yearOfBirth;
 }
 int Student::getAge() 
 {
 	return -1;
 }
-const std::vector<double> &getAssignmentsScore()
+const std::vector<double>& Student::getAssignmentsScore()
 {
-	std::vector<double> scores;
+	return assignmentsScore;
 }
 double Student::getProjectScore()
 {
-	return -1;
+	return projectScore;
 }
 void Student::printDetails() {
 }
